@@ -38,31 +38,36 @@
 
 <div class="navbar">
     <div class="navbar-inner">
-    <div class="container">
+        <div class="container">
 
-         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-         </a>
+             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+             </a>
 
-        <a class="brand" href="{{ SITEURL }}">{{ SITENAME }}</a>
+            <a class="brand" href="{{ SITEURL }}">{{ SITENAME }}</a>
 
-        <div class="nav-collapse">
-        <ul class="nav">
-        {% for title, link in MENUITEMS %}
-            <li><a href="{{ link }}">{{ title }}</a></li>
-        {% endfor %}
-            
-        {% if DISPLAY_PAGES_ON_MENU %}
-        {% for page in pages %}
-            <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
-        {% endfor %}
-        {% endif %}
-        </ul>
+            <div class="nav-collapse">
+                <ul class="nav">
+                {% for title, link in MENUITEMS %}
+                    <li><a href="{{ link }}">{{ title }}</a></li>
+                {% endfor %}
+
+                {% if DISPLAY_PAGES_ON_MENU %}
+                {% for page in pages %}
+                    <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+                {% endfor %}
+                {% endif %}
+
+                {% if SITESUBTITLE %}
+                    <li><a href="{{ SITEURL }}">{{ SITESUBTITLE }}</a></li>
+                {% endif %}
+                </ul>
+
+            </div>
+
         </div>
-        
-    </div>
     </div>
 </div>
 
